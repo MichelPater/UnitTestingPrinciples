@@ -2,6 +2,9 @@
 
 This project demonstrates comprehensive testing concepts in Python using pytest. It's designed for developers new to testing who want to learn best practices.
 
+# This project will be added to over time
+For now only the example code for the Calculator is added, no tests or other example code.
+
 ## Project Structure
 
 ```
@@ -12,7 +15,8 @@ UnitTestingPrinciples/
 │   ├── __init__.py
 │   ├── calculator/
 │   │   ├── __init__.py
-│   │   └── calculator.py
+│   │   ├── calculator.py
+|   |   └── calculator_with_history.py
 │   ├── weather_service/
 │   │   ├── __init__.py
 │   │   └── weather_service.py
@@ -21,10 +25,17 @@ UnitTestingPrinciples/
 │       ├── user.py
 │       └── user_repository.py
 ├── tests/
-│   ├── __init__.py
-│   ├── test_calculator.py
-│   ├── test_weather_service.py
-│   └── test_user_management.py
+│   ├── calculator/
+│   │   ├── __init__.py
+│   │   ├── test_calculator.py
+|   |   └── test_calculator_with_history.py
+│   ├── weather_service/
+│   │   ├── __init__.py
+│   │   └── test_weather_service.py
+│   └── user_management/
+│       ├── __init__.py
+│       ├── test_user.py
+│       └── test_user_repository.py
 └── conftest.py
 ```
 
@@ -64,12 +75,17 @@ pytest -v
 - **Concepts**: AAA pattern, edge cases, code coverage pitfalls
 - **Location**: `src/calculator/calculator.py`
 
-### 2. Weather Service (Mocking & Exception Handling)
+### 2. Calculator with History (Introduction with mocking)
+- **Purpose**: Using the learned basic unit test principles and applying them
+- **Concepts**: Mocking, AAA pattern, edge cases, code coverage pitfalls
+- **Location**: `src/calculator/calculator_with_history.py`
+
+### 3. Weather Service (Mocking & Exception Handling)
 - **Purpose**: Shows how to test external dependencies and exceptions
 - **Concepts**: Mocking, HTTP requests, exception testing
 - **Location**: `src/weather_service/weather_service.py`
 
-### 3. User Management (Advanced Testing Concepts)
+### 4. User Management (Advanced Testing Concepts)
 - **Purpose**: Demonstrates fixtures, parametrized tests, and test organization
 - **Concepts**: Fixtures, parametrization, test classes, database mocking
 - **Location**: `src/user_management/`
